@@ -233,7 +233,7 @@ pub(crate) fn body(ui: &mut egui::Ui, app: &mut PdfCraftApp, t: &Tokens) -> (boo
                     }
                     if let Some(font) = e.font.as_mut() {
                         ui.label(tl!("Font:"));
-                        egui::ComboBox::from_id_salt("comment-font").selected_text(font.name()).show_ui(ui, |ui| {
+                        craft_ui::ComboBox::from_id_salt("comment-font").selected_text(font.name()).show_ui(ui, |ui| {
                             for f in AnnotFont::ALL {
                                 ui.selectable_value(font, f, f.name());
                             }
